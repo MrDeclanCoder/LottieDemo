@@ -41,21 +41,22 @@ android {
         }
     }
     android.applicationVariants.all { variant ->
-        variant.outputs.each { output ->
+        variant.outputs.all { output ->
             //新名字
             def newName
             //输出文件夹
             def outDirectory
+            outputFileName = "1hu_${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
             //是否为Jenkins打包，输出路径不同
-            if ("true".equals((IS_JENKINS))) {
-                //BUILD_PATH为服务器输出路径
-                outDirectory = BUILD_PATH
-                newName = "LottieDemo" + "-" + defaultConfig.versionName + "-" + BUILD_TYPE
-            } else {
-                outDirectory = output.outputFile.getParent()
-                newName = "LottieDemo" + "-" + defaultConfig.versionName + "-" + BUILD_TYPE
-            }
-            output.outputFile = new File(outDirectory, newName)
+//            if ("true".equals((IS_JENKINS))) {
+//                //BUILD_PATH为服务器输出路径
+//                outDirectory = BUILD_PATH
+//                newName = "LottieDemo" + "-" + defaultConfig.versionName + "-" + BUILD_TYPE
+//            } else {
+//                outDirectory = output.outputFile.getParent()
+//                newName = "LottieDemo" + "-" + defaultConfig.versionName + "-" + BUILD_TYPE
+//            }
+//            output.outputFile = new File(outDirectory, newName)
         }
     }
     flavorDimensions("channel")
