@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 def getMyStoreFile() {
     if ("true".equals(IS_JENKINS)){
-        return file("./doc/keystore.jks")
+        return file("../doc/keystore.jks")
     }else{
-        return file("./doc/keystore.jks")
+        return file("../doc/keystore.jks")
     }
 }
 
