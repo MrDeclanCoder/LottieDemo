@@ -20,7 +20,7 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'AAAA'
+            keyAlias 'aaaa'
             keyPassword '123456'
             storeFile getMyStoreFile()
             storePassword '123456'
